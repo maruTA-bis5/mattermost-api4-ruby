@@ -1,0 +1,51 @@
+require_relative 'endpoint/brand'
+require_relative 'endpoint/channels'
+require_relative 'endpoint/cluster'
+require_relative 'endpoint/commands'
+require_relative 'endpoint/compliance'
+require_relative 'endpoint/data_retention'
+require_relative 'endpoint/elasticsearch'
+require_relative 'endpoint/emoji'
+require_relative 'endpoint/files'
+require_relative 'endpoint/jobs'
+require_relative 'endpoint/ldap'
+require_relative 'endpoint/oauth'
+require_relative 'endpoint/open_graph'
+require_relative 'endpoint/plugins'
+require_relative 'endpoint/posts'
+require_relative 'endpoint/preferences'
+require_relative 'endpoint/reactions'
+require_relative 'endpoint/saml'
+require_relative 'endpoint/status'
+require_relative 'endpoint/system'
+require_relative 'endpoint/teams'
+require_relative 'endpoint/users'
+require_relative 'endpoint/webhooks'
+
+module Mattermost
+	module Endpoint
+		include Brand
+		include Channels
+		include Cluster
+		include Commands
+		include Compliance
+		include DataRetention
+		include Elasticsearch
+		include Emoji
+		include Files
+		include Jobs
+		include LDAP
+		include OAuth
+		include OpenGraph
+		include Plugins
+		include Posts
+		include Preferences
+		include Reactions
+		include SAML
+		include Status
+		include System
+		include Teams
+		include Users
+		include Webhooks
+	end
+end

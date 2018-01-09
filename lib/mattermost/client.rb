@@ -5,14 +5,15 @@ require_relative 'request'
 module Mattermost
 
 	class Client
-		import Mattermost::Endpoint
-		import Mattermost::Request
+		include HTTParty
+		include Mattermost::Endpoint
+		include Mattermost::Request
 
 		attr_accessor :server, :token
 
 		def initialize(server)
 			self.server = server
-			self.base_uri = "#{server}/api/v4"
+			self.class.base_uri "#{server}/api/v4"
 		end
 
 		def login(username, password)
@@ -35,10 +36,26 @@ module Mattermost
 			getMe().success?
 		end
 
+		def get(path, options = {}, &block)
+			self.class.get(path, options, &block)
+		end
+
+		def post(path, options = {}, &block)
+			self.class.get(path, options, &block)
+		end
+
+		def put(path, options = {}, &block)
+			self.class.get(path, options, &block)
+		end
+
+		def delete(path, options = {}, &block)
+			self.class.delete(path, options, &block)
+		end
+
 		private
 
 		def update_token
-			self.headers "Authorization: Bearer #{token}"
+			self.class.headers :Authorization => "Bearer #{token}"
 		end
 	end
 end

@@ -52,6 +52,10 @@ module Mattermost
 			self.class.delete(path, options, &block)
 		end
 
+		def base_uri
+			self.class.base_uri
+		end
+
 		private
 
 		def update_token

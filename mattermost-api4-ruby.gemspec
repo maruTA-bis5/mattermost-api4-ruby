@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |spec|
   spec.name          = "mattermost-api4-ruby"
-  spec.version       = "0.0.3"
+  spec.version       = "0.0.4"
   spec.authors       = ["Takayuki Maruyama"]
   spec.email         = ["bis5.wsys@gmail.com"]
 
@@ -22,5 +22,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rspec", "~> 3.0"
 
   spec.add_dependency "httparty", "~> 0.15"
+  spec.add_dependency "websocket-client-simple", "~> 0.3"
 
 end

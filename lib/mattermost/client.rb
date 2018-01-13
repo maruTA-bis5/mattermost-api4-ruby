@@ -1,6 +1,7 @@
 require 'httparty'
 require_relative 'endpoint'
 require_relative 'request'
+require_relative 'websocket_client'
 
 module Mattermost
 
@@ -34,6 +35,17 @@ module Mattermost
 
 		def connected?
 			getMe().success?
+		end
+
+		def connect_websocket
+			# TODO raise exception then connected? == false
+			@ws_client = WebSocketClient.new "#{base_uri}/websocket", token, {:headers => self.class.headers}
+			yield @ws_client if block_given?
+			@ws_client
+		end
+
+		def ws_client
+			@ws_client
 		end
 
 		def get(path, options = {}, &block)

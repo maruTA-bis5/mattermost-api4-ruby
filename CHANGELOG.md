@@ -1,5 +1,13 @@
 # Change Log
 
+## [v0.0.5](https://github.com/maruTA-bis5/mattermost-api4-ruby/tree/v0.0.5) (2018-01-17)
+[Full Changelog](https://github.com/maruTA-bis5/mattermost-api4-ruby/compare/v0.0.4...v0.0.5)
+
+**Fixed bugs:**
+
+- Could not receive WebSocket event after few seconds [\#9](https://github.com/maruTA-bis5/mattermost-api4-ruby/issues/9)
+- WebSocketClient\#connected? throws NoMethodError [\#8](https://github.com/maruTA-bis5/mattermost-api4-ruby/issues/8)
+
 ## [v0.0.4](https://github.com/maruTA-bis5/mattermost-api4-ruby/tree/v0.0.4) (2018-01-13)
 [Full Changelog](https://github.com/maruTA-bis5/mattermost-api4-ruby/compare/v0.0.3...v0.0.4)
 
@@ -7,23 +15,15 @@
 
 - WebSocket Support [\#1](https://github.com/maruTA-bis5/mattermost-api4-ruby/issues/1)
 
-## [v0.0.3](https://github.com/maruTA-bis5/mattermost-api4-ruby/tree/v0.0.3) (2018-01-09)
-[Full Changelog](https://github.com/maruTA-bis5/mattermost-api4-ruby/compare/v0.0.2...v0.0.3)
-
-**Implemented enhancements:**
-
-- add Mattermost::Client#base\_uri (48bb283)
-
-## [v0.0.2](https://github.com/maruTA-bis5/mattermost-api4-ruby/tree/v0.0.2) (2018-01-09)
-[Full Changelog](https://github.com/maruTA-bis5/mattermost-api4-ruby/compare/v0.0.1...v0.0.2)
-
-**Implemented enhancements:**
-
-- Users API Support (5caef7e)
-
 **Closed issues:**
 
 - 0.0.1 doesn't work [\#3](https://github.com/maruTA-bis5/mattermost-api4-ruby/issues/3)
+
+## [v0.0.3](https://github.com/maruTA-bis5/mattermost-api4-ruby/tree/v0.0.3) (2018-01-09)
+[Full Changelog](https://github.com/maruTA-bis5/mattermost-api4-ruby/compare/v0.0.2...v0.0.3)
+
+## [v0.0.2](https://github.com/maruTA-bis5/mattermost-api4-ruby/tree/v0.0.2) (2018-01-09)
+[Full Changelog](https://github.com/maruTA-bis5/mattermost-api4-ruby/compare/v0.0.1...v0.0.2)
 
 ## [v0.0.1](https://github.com/maruTA-bis5/mattermost-api4-ruby/tree/v0.0.1) (2018-01-08)
 

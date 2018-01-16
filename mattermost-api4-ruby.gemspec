@@ -23,6 +23,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "github_changelog_generator"
 
   spec.add_dependency "httparty", "~> 0.15"
-  spec.add_dependency "websocket-client-simple", "~> 0.3"
+  spec.add_dependency "faye-websocket", "~> 0.10"
+  spec.add_dependency "event_emitter", "~> 0.2"
 
 end

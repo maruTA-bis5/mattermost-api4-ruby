@@ -1,4 +1,4 @@
-require 'websocket-client-simple'
+require 'faye/websocket'
 require 'event_emitter'
 require 'json'
 
@@ -9,29 +9,26 @@ module Mattermost
 		def initialize(url, token, option = {})
 			@token = token
 			@url = url
+			@option = option
 			@seq_mutex = Mutex.new
-			@seq = 0
 			@connected = false
-			mm_ws = self
-			@client = WebSocket::Client::Simple.connect(url, option) do |ws|
-				ws.on :open do
-					mm_ws.on_open
-				end
-				ws.on :message do |msg|
-					mm_ws.on_message msg.data
-				end
-				ws.on :close do |e|
-					mm_ws.on_close e
-				end
-				ws.on :error do |e|
-					mm_ws.on_error e
-				end
-			end
 			yield self if block_given?
+			connect
+			self
 		end
 
-		def on_open
-			emit :open
+		def connect
+			return self if connected?
+			mm_ws = self
+			@em = Thread.new do
+				EM.run do
+					mm_ws.connect_internal
+				end
+			end
+		end
+
+		def on_open(e)
+			emit :open, e
 		end
 
 		def on_message(data)
@@ -44,8 +41,8 @@ module Mattermost
 				@connected = true
 			else
 				emit event.to_sym, json
-				emit :message, json
 			end
+			emit :message, json
 		end
 
 		def on_close(msg)
@@ -67,11 +64,35 @@ module Mattermost
 		end
 
 		def connected?
-			@connected && @client.connected?
+			@connected && (@client != nil && @client.ready_state == Faye::WebSocket::API::OPEN)
 		end
 
 		def close
-			@client.close
+			@connected = false
+			@client.close if @client != nil
+			@client = nil
+			Thread.kill @em if @em != nil
+			@em = nil
+		end
+
+		def connect_internal
+			@seq = 0
+			mm_ws = self
+			@client = Faye::WebSocket::Client.new(@url.gsub(/^http(s?):/, 'ws\1:'), {}, { :headers => {
+				'Authorization' => "Bearer #{@token}"
+			}})
+			@client.on :open do |e|
+				mm_ws.on_open e
+			end
+			@client.on :message do |msg|
+				mm_ws.on_message msg.data
+			end
+			@client.on :close do |e|
+				mm_ws.on_close e
+			end
+			@client.on :error do |e|
+				mm_ws.on_error e
+			end
 		end
 
 		private
@@ -90,5 +111,6 @@ module Mattermost
 				@seq
 			end
 		end
+
 	end
 end

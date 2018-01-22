@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |spec|
   spec.name          = "mattermost-api4-ruby"
-  spec.version       = "0.0.5"
+  spec.version       = "0.0.6"
   spec.authors       = ["Takayuki Maruyama"]
   spec.email         = ["bis5.wsys@gmail.com"]
 

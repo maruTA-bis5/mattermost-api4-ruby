@@ -1,6 +1,17 @@
 # Change Log
 
-## [v0.0.5](https://github.com/maruTA-bis5/mattermost-api4-ruby/tree/v0.0.5) (2018-01-17)
+## [v0.0.6](https://github.com/maruTA-bis5/mattermost-api4-ruby/tree/v0.0.6) (2018-01-22)
+[Full Changelog](https://github.com/maruTA-bis5/mattermost-api4-ruby/compare/v0.0.5...v0.0.6)
+
+**Implemented enhancements:**
+
+- add PUT /users/{user\_id}/auth [\#10](https://github.com/maruTA-bis5/mattermost-api4-ruby/issues/10)
+
+**Closed issues:**
+
+- Mattermost::Endpoint::User\#getMe is not like ruby [\#4](https://github.com/maruTA-bis5/mattermost-api4-ruby/issues/4)
+
+## [v0.0.5](https://github.com/maruTA-bis5/mattermost-api4-ruby/tree/v0.0.5) (2018-01-16)
 [Full Changelog](https://github.com/maruTA-bis5/mattermost-api4-ruby/compare/v0.0.4...v0.0.5)
 
 **Fixed bugs:**

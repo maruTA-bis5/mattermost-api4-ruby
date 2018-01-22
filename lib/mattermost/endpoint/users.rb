@@ -188,6 +188,14 @@ module Mattermost
 			def enable_personal_access_token(token)
 				post("/users/tokens/enable", :body => {:token => token}.to_json)
 			end
+
+			def update_user_authentication_method(user_id, auth_service, password = "", auth_data = "")
+				put("/users/#{user_id}/auth", :body => {
+					:auth_data => auth_data,
+					:auth_service => auth_service,
+					:password => password
+				}.to_json)
+			end
 		end
 	end
 end

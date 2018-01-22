@@ -34,7 +34,7 @@ module Mattermost
 		end
 
 		def connected?
-			getMe().success?
+			get_me.success?
 		end
 
 		def connect_websocket

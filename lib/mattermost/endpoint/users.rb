@@ -3,7 +3,7 @@ require 'json'
 module Mattermost
 	module Endpoint
 		module Users
-			def getMe
+			def get_me
 				get_user("me")
 			end
 

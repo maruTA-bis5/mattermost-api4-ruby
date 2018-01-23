@@ -1,5 +1,13 @@
 # Change Log
 
+## [v0.0.7](https://github.com/maruTA-bis5/mattermost-api4-ruby/tree/v0.0.7) (2018-01-24)
+[Full Changelog](https://github.com/maruTA-bis5/mattermost-api4-ruby/compare/v0.0.6...v0.0.7)
+
+**Fixed bugs:**
+
+- All POST/PUT operations are broken [\#12](https://github.com/maruTA-bis5/mattermost-api4-ruby/issues/12)
+- Mattermost::Client\#login\(username, password\) is broken [\#11](https://github.com/maruTA-bis5/mattermost-api4-ruby/issues/11)
+
 ## [v0.0.6](https://github.com/maruTA-bis5/mattermost-api4-ruby/tree/v0.0.6) (2018-01-22)
 [Full Changelog](https://github.com/maruTA-bis5/mattermost-api4-ruby/compare/v0.0.5...v0.0.6)
 

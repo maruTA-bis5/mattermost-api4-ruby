@@ -53,11 +53,11 @@ module Mattermost
 		end
 
 		def post(path, options = {}, &block)
-			self.class.get(path, options, &block)
+			self.class.post(path, options, &block)
 		end
 
 		def put(path, options = {}, &block)
-			self.class.get(path, options, &block)
+			self.class.put(path, options, &block)
 		end
 
 		def delete(path, options = {}, &block)

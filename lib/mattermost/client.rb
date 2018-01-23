@@ -18,7 +18,7 @@ module Mattermost
 		end
 
 		def login(username, password)
-			login_request = post('/users/login', :body => {:login_id => uername, :password => password}.to_json)
+			login_request = post('/users/login', :body => {:login_id => username, :password => password}.to_json)
 			self.token = login_request.headers['token']
 			update_token
 		end

@@ -1,4 +1,3 @@
-require 'httparty'
 require_relative 'endpoint'
 require_relative 'request'
 require_relative 'websocket_client'
@@ -6,15 +5,21 @@ require_relative 'websocket_client'
 module Mattermost
 
 	class Client
-		include HTTParty
+		extend Gem::Deprecate
 		include Mattermost::Endpoint
 		include Mattermost::Request
 
-		attr_accessor :server, :token
+		attr_accessor :server, :token, :headers
+
+		# *DEPRECATED* I'll remove this method soon
+		def base_uri
+			"#{server}/api/v4"
+		end
+		deprecate :base_uri, :none, 2018, 1
 
 		def initialize(server)
 			self.server = server
-			self.class.base_uri "#{server}/api/v4"
+			self.headers = {:Accept => "application/json"}
 		end
 
 		def login(username, password)
@@ -40,7 +45,7 @@ module Mattermost
 
 		def connect_websocket
 			# TODO raise exception then connected? == false
-			@ws_client = WebSocketClient.new "#{base_uri}/websocket", token, {:headers => self.class.headers}
+			@ws_client = WebSocketClient.new "#{base_uri}/websocket", token, {:headers => self.headers}
 			yield @ws_client if block_given?
 			@ws_client
 		end
@@ -49,30 +54,11 @@ module Mattermost
 			@ws_client
 		end
 
-		def get(path, options = {}, &block)
-			self.class.get(path, options, &block)
-		end
-
-		def post(path, options = {}, &block)
-			self.class.post(path, options, &block)
-		end
-
-		def put(path, options = {}, &block)
-			self.class.put(path, options, &block)
-		end
-
-		def delete(path, options = {}, &block)
-			self.class.delete(path, options, &block)
-		end
-
-		def base_uri
-			self.class.base_uri
-		end
-
 		private
 
 		def update_token
-			self.class.headers :Authorization => "Bearer #{token}"
+			headers[:Authorization] = "Bearer #{token}"
 		end
+
 	end
 end

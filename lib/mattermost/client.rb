@@ -24,6 +24,7 @@ module Mattermost
 		end
 
 		def logout
+			post("/users/logout")
 			self.token = nil
 			update_token
 		end

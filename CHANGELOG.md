@@ -1,6 +1,17 @@
 # Change Log
 
-## [v0.0.7](https://github.com/maruTA-bis5/mattermost-api4-ruby/tree/v0.0.7) (2018-01-24)
+## [v0.0.8](https://github.com/maruTA-bis5/mattermost-api4-ruby/tree/v0.0.8) (2018-01-31)
+[Full Changelog](https://github.com/maruTA-bis5/mattermost-api4-ruby/compare/v0.0.7...v0.0.8)
+
+**Implemented enhancements:**
+
+- Use Faraday as internal HTTP client [\#6](https://github.com/maruTA-bis5/mattermost-api4-ruby/issues/6)
+
+**Fixed bugs:**
+
+- Client\#logout did not call logout api [\#13](https://github.com/maruTA-bis5/mattermost-api4-ruby/issues/13)
+
+## [v0.0.7](https://github.com/maruTA-bis5/mattermost-api4-ruby/tree/v0.0.7) (2018-01-23)
 [Full Changelog](https://github.com/maruTA-bis5/mattermost-api4-ruby/compare/v0.0.6...v0.0.7)
 
 **Fixed bugs:**

@@ -9,7 +9,7 @@ module Mattermost
 		include Mattermost::Endpoint
 		include Mattermost::Request
 
-		attr_accessor :server, :token, :headers
+		attr_accessor :server, :subdir, :token, :headers
 
 		# *DEPRECATED* I'll remove this method soon
 		def base_uri
@@ -18,7 +18,8 @@ module Mattermost
 		deprecate :base_uri, :none, 2018, 1
 
 		def initialize(server)
-			self.server = server
+			self.server = URI.join(server, '/').to_s
+			self.subdir = URI(server).path
 			self.headers = {:Accept => "application/json"}
 		end
 

@@ -45,7 +45,7 @@ module Mattermost
 		end
 
 		def api(path)
-			"/api/v4#{path}"
+			"#{subdir}/api/v4#{path}"
 		end
 
 	end

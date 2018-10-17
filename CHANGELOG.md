@@ -1,6 +1,13 @@
 # Change Log
 
-## [v0.0.8](https://github.com/maruTA-bis5/mattermost-api4-ruby/tree/v0.0.8) (2018-01-31)
+## [0.0.9](https://github.com/maruTA-bis5/mattermost-api4-ruby/tree/0.0.9) (2018-10-18)
+[Full Changelog](https://github.com/maruTA-bis5/mattermost-api4-ruby/compare/v0.0.8...0.0.9)
+
+**Implemented enhancements:**
+
+- Allow mattermost servers to use subdirectory [\#17](https://github.com/maruTA-bis5/mattermost-api4-ruby/pull/17) ([haccht](https://github.com/haccht))
+
+## [v0.0.8](https://github.com/maruTA-bis5/mattermost-api4-ruby/tree/v0.0.8) (2018-01-30)
 [Full Changelog](https://github.com/maruTA-bis5/mattermost-api4-ruby/compare/v0.0.7...v0.0.8)
 
 **Implemented enhancements:**

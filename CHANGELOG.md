@@ -1,7 +1,18 @@
 # Change Log
 
-## [0.0.9](https://github.com/maruTA-bis5/mattermost-api4-ruby/tree/0.0.9) (2018-10-18)
-[Full Changelog](https://github.com/maruTA-bis5/mattermost-api4-ruby/compare/v0.0.8...0.0.9)
+## [v0.0.10](https://github.com/maruTA-bis5/mattermost-api4-ruby/tree/v0.0.10) (2019-01-26)
+[Full Changelog](https://github.com/maruTA-bis5/mattermost-api4-ruby/compare/v0.0.9...v0.0.10)
+
+**Fixed bugs:**
+
+- Fix typo in create channel method [\#21](https://github.com/maruTA-bis5/mattermost-api4-ruby/pull/21) ([yulkadev](https://github.com/yulkadev))
+
+**Merged pull requests:**
+
+- link to gist example for API usage. [\#18](https://github.com/maruTA-bis5/mattermost-api4-ruby/pull/18) ([mqu](https://github.com/mqu))
+
+## [v0.0.9](https://github.com/maruTA-bis5/mattermost-api4-ruby/tree/v0.0.9) (2018-10-17)
+[Full Changelog](https://github.com/maruTA-bis5/mattermost-api4-ruby/compare/v0.0.8...v0.0.9)
 
 **Implemented enhancements:**
 

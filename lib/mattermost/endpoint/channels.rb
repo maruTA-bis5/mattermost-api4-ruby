@@ -4,7 +4,7 @@ module Mattermost
 	module Endpoint
 		module Channels
 			def create_channel(channel = {})
-				post("/channels", :body => channels.to_json)
+				post("/channels", :body => channel.to_json)
 			end
 
 			def create_direct_channel(user_id_1, user_id_2)
